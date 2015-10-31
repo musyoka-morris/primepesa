@@ -2,9 +2,11 @@
 Open source Apis for PrimePesa merchant acounts <br/>
 https://www.primepesa.com
 
-Get balance
+#Get balance
+
 ```php
 use primepesa\Balance;
+
 $secretKey = '59D4627DB7D04FC59B0DB043D2C635BC';
 $bal = new Balance($secretKey);
 $bal->execute();
@@ -15,9 +17,10 @@ $myCurrency = $bal->getCurrency(); #iso currency code
  */
 ```
 
-Handle IPN Notification
+#Handle IPN Notification
 ```php
 use primepesa\IPNNotification;
+
 $secretKey = '59D4627DB7D04FC59B0DB043D2C635BC';
 $ipn = new IPNNotification($secretKey);
 if ( $ipn->isAuthentic() ) {
@@ -33,3 +36,11 @@ if ( $ipn->isAuthentic() ) {
      */
 }
 ```
+
+#Exceptions
+#1. PrimePesaException
+This exception is thrown if the servers sent an error response. 
+It is mostly caused by an invalid secret key.
+
+#2. Exception
+This happens if a system error occured while sending CURL request.
