@@ -38,7 +38,7 @@ if ( $ipn->isAuthentic() ) {
 ```
 
 #Exceptions
-#1. PrimePesaException
+<h1>1. PrimePesaException</h1>
 This exception is thrown if the servers sent an error response. 
 It is mostly caused by an invalid secret key.
 
